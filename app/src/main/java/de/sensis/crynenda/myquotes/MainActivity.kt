@@ -33,6 +33,11 @@ class MainActivity : AppCompatActivity() {
             "Habe Mut Dich Deines eigenen Verstandes zu bedienen!",
             "-- Immanuel Kant",
             "*1724  † 1804"
+        ),
+        Quote(
+            "Steuern sind ein erlaubter Fall von Raub.",
+            "-- Thomas von Aquin",
+            "*1224  † 1274"
         )
     )
 
