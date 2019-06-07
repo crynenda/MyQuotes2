@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">MyQuotes</string>
+	<string name="main_btn_previous">Previous</string>
+	<string name="main_btn_next">Next</string>
+</resources>
