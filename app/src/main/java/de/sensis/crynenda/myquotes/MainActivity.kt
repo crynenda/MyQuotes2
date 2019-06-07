@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             "*106 v.Chr.  † 43 v.Chr."
         ),
         Quote(
-            "Für die lernende Seele hat das Leben auch in seinen dunkelsten Stunden einen unendlichen Wert.",
+            "Habe Mut Dich Deines eigenen Verstandes zu bedienen!",
             "-- Immanuel Kant",
             "*1724  † 1804"
         )
