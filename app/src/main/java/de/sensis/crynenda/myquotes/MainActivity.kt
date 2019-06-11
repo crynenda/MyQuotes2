@@ -3,8 +3,10 @@ package de.sensis.crynenda.myquotes
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,12 +47,37 @@ class MainActivity : AppCompatActivity() {
     // ohne Typenangabe autom. Integer
     private var index = 0
 
+    private lateinit var quoteText: TextView
+    private lateinit var quoteAuthor: TextView
+    private lateinit var quoteYear: TextView
+    private lateinit var quoteNext: Button
+    private lateinit var quotePrevious: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
+        quoteText = findViewById(R.id.txt_quote_text)
+        quoteAuthor = findViewById(R.id.txt_quote_author)
+        quoteYear = findViewById(R.id.txt_quote_year)
+        quoteNext = findViewById(R.id.btn_next)
+        quotePrevious = findViewById(R.id.btn_prev)
+
+
         setQuote(index)
+        setVisibilityButtons()
+    }
+
+    private fun setVisibilityButtons() {
+        when (index) {
+            0 -> quotePrevious.visibility = View.INVISIBLE
+            quotes.size - 1 -> quoteNext.visibility = View.INVISIBLE
+            else -> {
+                quotePrevious.visibility = View.VISIBLE
+                quoteNext.visibility = View.VISIBLE
+            }
+        }
     }
 
 
@@ -81,9 +108,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setQuote(index: Int) {
-        findViewById<TextView>(R.id.txt_quote_text).text = quotes[index].text
-        findViewById<TextView>(R.id.txt_quote_author).text = quotes[index].author
-        findViewById<TextView>(R.id.txt_quote_year).text = quotes[index].year
+        quoteText.text = quotes[index].text
+        quoteAuthor.text = quotes[index].author
+        quoteYear.text = quotes[index].year
     }
 
     private fun makeToast(message: String) {
